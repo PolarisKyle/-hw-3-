@@ -1,4 +1,4 @@
-# -hw-3-
+# hw-3
 hw_3_食物分类
 有三个文件夹——testing，training，validation。均为食物照片。
 
@@ -15,6 +15,6 @@ train set的正确率大致为0.9，validation set 的正确率大致在0.5左�
 欢迎大家批评指正。
 由于食物照片太多，一共一万多张照片，1.1g左右。照片就不上传了。大家从下方百度云链接下载后，放入data文件夹即可。
 
-链接：https://pan.baidu.com/s/1aCsicRCglfLF-JikL8dN5g 
+链接： 
 提取码：pkwq 
 复制这段内容后打开百度网盘手机App，操作更方便哦
