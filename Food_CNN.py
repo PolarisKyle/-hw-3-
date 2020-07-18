@@ -93,3 +93,24 @@ plt.plot(history.history['loss'],color='r',label='交叉熵损失值')
 plt.plot(history.history['accuracy'],color='g',label='精确度')
 plt.legend(loc="best")
 plt.show()
+
+
+
+#将训练集和验证集组成一个训练集,再次进行训练
+
+train_val_x = np.concatenate((train_x, val_x), axis=0)
+train_val_y = np.concatenate((train_y, val_y), axis=0)
+model.fit(train_val_x,train_val_y,epochs=30)
+
+test_y = model.predict(test_x)
+
+# print(test_y.shape)
+# print(test_y)
+prediction = np.argmax(test_y,axis=1)
+print(prediction)
+with open("predict.csv", 'w') as f:
+    f.write('Id,Category\n')
+predict = pd.read_csv('predict.csv', engine='python', encoding='big5')
+predict['Id'] = range(3347)
+predict['Category'] = prediction
+predict.to_csv('predict.csv')
